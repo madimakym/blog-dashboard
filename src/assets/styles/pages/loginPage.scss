@@ -1,0 +1,35 @@
+.login-page {
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .header {
+        text-align: center;
+        margin-bottom: 20px;
+
+        img {
+            width: 30%;
+        }
+    }
+
+    h2 {
+        margin-bottom: 0.5em;
+        color: rgba(0, 0, 0, 0.85);
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 1.35;
+    }
+
+    span {
+        font-weight: 600;
+    }
+
+    .card {
+        background: #ffffff;
+    }
+}

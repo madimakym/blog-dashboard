@@ -1,0 +1,52 @@
+.default-page {
+    .sub-title {
+        margin-bottom: 20px;
+    }
+}
+
+.gallery-wrapper {
+    .blc {
+        text-align: center;
+        display: flex;
+        padding: 7px;
+        justify-content: center;
+        border: 2px dotted #0000002b;
+        border-radius: 0px;
+        font-size: 17px;
+    }
+
+    .image-list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+
+        .image-btn {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+            justify-content: center;
+
+            span {
+                padding: 0px 6px;
+                font-size: 19px;
+                cursor: pointer;
+            }
+
+            .edit-btn {
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+            .delete-btn {
+                color: red;
+                font-size: 14px;
+                font-weight: bold;
+            }
+        }
+
+        .image-item {
+            padding: 8px 4px;
+        }
+    }
+}

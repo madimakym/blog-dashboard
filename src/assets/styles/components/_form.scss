@@ -1,0 +1,60 @@
+.ant-form-item-control:focus {
+    border: 1px solid var(--primary-color) !important;
+    box-shadow: none;
+}
+
+.form-control {
+    box-shadow: none;
+    padding: 0.6rem .75rem;
+    border-radius: 5px;
+}
+
+.ant-select-selector {
+    padding: 7px 10px !important;
+    height: 43px !important;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.input-error {
+    color: red;
+    font-size: 15px;
+    float: left;
+    margin: 3px 0px 10px;
+}
+
+.ant-input-disabled {
+    color: var(--primary-color) !important;
+}
+
+.form-group {
+    padding: 10px
+}
+
+
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: #f12525;
+    background-color: #f12525;
+}
+
+.ant-checkbox-wrapper {
+    box-sizing: border-box;
+    margin-right: 13px !important;
+    padding: 3px;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    display: inline-flex;
+    align-items: baseline;
+    line-height: unset;
+    cursor: pointer;
+}
