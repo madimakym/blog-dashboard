@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
-import { Breadcrumb } from 'antd';
-import { Table, Space, PageHeader, Spin, Button } from 'antd';
+import { Table,Popconfirm,Breadcrumb, Space, PageHeader, Spin, Button } from 'antd';
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-import { categoryClearState, categoryFetchAsync } from "../../redux/category/category-slice";
+import { categoryClearState, categoryDeleteAsync, categoryFetchAsync } from "../../redux/category/category-slice";
 
 function CategoryList() {
     const dispatch = useDispatch();
@@ -17,6 +16,7 @@ function CategoryList() {
         return () => dispatch(categoryClearState())
     }, [dispatch]);
 
+    const handleDelete = (id) => dispatch(categoryDeleteAsync(id))
 
     const columns = [
         {
@@ -38,7 +38,11 @@ function CategoryList() {
                     <Button size="small">
                         <Link to={`/category/edit/${record.id}`}>Edit</Link>
                     </Button>
-                    <Button type="primary" size="small" danger>Delete</Button>
+                    <Popconfirm
+                        title="Sure to delete ?"
+                        onConfirm={() => handleDelete(record.id)}>
+                        <Button type="primary" size="small" danger>Delete</Button>
+                    </Popconfirm>
                 </Space>
             ),
         },

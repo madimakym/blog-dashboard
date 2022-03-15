@@ -40,7 +40,6 @@ export const categoryFetchOneAsync = createAsyncThunk(
     }
 );
 
-
 export const categoryCreateAsync = createAsyncThunk(
     'category/categoryCreateAsync',
     async (payload, { rejectWithValue }) => {
@@ -72,6 +71,24 @@ export const categoryEditAsync = createAsyncThunk(
         }
     }
 );
+
+export const categoryDeleteAsync = createAsyncThunk(
+    "category/categoryDeleteAsync",
+    async (payload, { rejectWithValue, dispatch }) => {
+        try {
+            const response = await axios({
+                method: 'DELETE',
+                url: `${API_ROOT}/api/category/${payload}`,
+                data: payload
+            });
+            dispatch(categoryFetchAsync())
+            return response.data;
+        } catch (error) {
+            return rejectWithValue(handleApiError(error.response))
+        }
+    }
+);
+
 
 export const categorySlice = createSlice({
     name: 'category',
@@ -166,7 +183,21 @@ export const categorySlice = createSlice({
             state.status = 'failed'
             state.isFetching = false
             state.isSuccess = false
-        }
+        },
+
+        // Delete
+        [categoryDeleteAsync.pending]: (state) => {
+            state.status = 'pending'
+            state.isFetching = true
+        },
+        [categoryDeleteAsync.fulfilled]: (state) => {
+            state.status = "success";
+            state.isFetching = false
+        },
+        [categoryDeleteAsync.rejected]: (state) => {
+            state.status = 'failed'
+            state.isFetching = false
+        },
     }
 });
 

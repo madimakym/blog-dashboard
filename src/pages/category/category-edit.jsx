@@ -13,9 +13,6 @@ function CategoryEdit() {
     const navigate = useNavigate();
     let { id } = useParams();
 
-
-    console.log("category:", category.libelle);
-
     form.setFieldsValue({
         libelle: category.libelle,
         description: category.description,
