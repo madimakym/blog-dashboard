@@ -57,6 +57,22 @@ export const categoryCreateAsync = createAsyncThunk(
     }
 );
 
+export const categoryEditAsync = createAsyncThunk(
+    "categorie/categoryEditAsync",
+    async (payload, { rejectWithValue }) => {
+        try {
+            const response = await axios({
+                method: 'PUT',
+                url: `${API_ROOT}/api/category/${payload.id}`,
+                data: payload.data
+            });
+            return response.data;
+        } catch (error) {
+            return rejectWithValue(handleApiError(error.response.data))
+        }
+    }
+);
+
 export const categorySlice = createSlice({
     name: 'category',
     initialState: {
@@ -81,6 +97,25 @@ export const categorySlice = createSlice({
         }
     },
     extraReducers: {
+        // Create
+        [categoryCreateAsync.pending](state) {
+            state.status = 'pending'
+            state.isFetching = true
+            state.isSuccess = false
+        },
+
+        [categoryCreateAsync.fulfilled](state) {
+            state.status = 'success'
+            state.isFetching = false
+            state.isSuccess = true
+        },
+
+        [categoryCreateAsync.rejected](state) {
+            state.status = 'failed'
+            state.isFetching = false
+            state.isSuccess = false
+        },
+
         // Fetch
         [categoryFetchAsync.pending](state) {
             state.status = 'pending'
@@ -114,20 +149,20 @@ export const categorySlice = createSlice({
             state.isFetching = false
         },
 
-        // Create
-        [categoryCreateAsync.pending](state) {
+        // Update
+        [categoryEditAsync.pending](state) {
             state.status = 'pending'
             state.isFetching = true
             state.isSuccess = false
         },
 
-        [categoryCreateAsync.fulfilled](state) {
+        [categoryEditAsync.fulfilled](state) {
             state.status = 'success'
             state.isFetching = false
             state.isSuccess = true
         },
 
-        [categoryCreateAsync.rejected](state) {
+        [categoryEditAsync.rejected](state) {
             state.status = 'failed'
             state.isFetching = false
             state.isSuccess = false

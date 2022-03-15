@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Breadcrumb, PageHeader, Form, Spin, Input, Button } from 'antd';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { categoryClearState, categoryCreateAsync, categoryFetchOneAsync } from "../../redux/category/category-slice";
+import { categoryClearState, categoryFetchOneAsync, categoryEditAsync } from "../../redux/category/category-slice";
 
 const { TextArea } = Input;
 
@@ -19,14 +19,14 @@ function CategoryEdit() {
     form.setFieldsValue({
         libelle: category.libelle,
         description: category.description,
-      });
+    });
 
     useEffect(() => {
         dispatch(categoryFetchOneAsync(id))
     }, [dispatch, id]);
 
     const onFinish = (values) => {
-        dispatch(categoryCreateAsync(values))
+        dispatch(categoryEditAsync({ id: id, data: values }))
     };
 
     useEffect(() => {
