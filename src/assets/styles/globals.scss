@@ -1,6 +1,7 @@
 @import '~antd/dist/antd.css';
 @import './theme';
-// @import './components/button';
+@import './components/page-header';
+@import './components/button';
 // @import './components/header';
 // @import './components/sidebar';
 // @import './components/lockscreen';
@@ -47,6 +48,7 @@ body {
     background-color: #1cb7cd;
 }
 
+
 a {
     color: var(--primary-color);
 }
@@ -55,152 +57,158 @@ a:hover {
     color: var(--primary-color);
 }
 
+.content{
+    background-color: white;
+    box-shadow: 0px 0px 3px #ccc;
+    padding: 10px
+}
+
 .card {
     background-color: white;
     // border: 1px solid #0000000d;
     padding: 10px
 }
 
-.shadow {
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.20);
-}
+// .shadow {
+//     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.20);
+// }
 
-// ALERTE
-.alert-error {
-    margin-bottom: 10px;
-    font-weight: 500;
+// // ALERTE
+// .alert-error {
+//     margin-bottom: 10px;
+//     font-weight: 500;
 
-    .ant-alert-message {
-        color: #c80000 !important;
-    }
-}
+//     .ant-alert-message {
+//         color: #c80000 !important;
+//     }
+// }
 
-.ant-result-success {
-    .ant-result {
-        padding: 30px !important;
-    }
+// .ant-result-success {
+//     .ant-result {
+//         padding: 30px !important;
+//     }
 
-    .ant-result-title {
-        font-size: 19px;
-    }
-}
+//     .ant-result-title {
+//         font-size: 19px;
+//     }
+// }
 
-h3 {
-    font-weight: 600;
-}
+// h3 {
+//     font-weight: 600;
+// }
 
-.ant-card {
-    border-radius: 0.375rem;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 #00000000;
+// .ant-card {
+//     border-radius: 0.375rem;
+//     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 #00000000;
 
-    h3 {
-        font-weight: 600;
-        color: var(--primary-color);
-    }
-}
+//     h3 {
+//         font-weight: 600;
+//         color: var(--primary-color);
+//     }
+// }
 
-.ant-page-header {
-    padding: 5px 0px;
-}
+// .ant-page-header {
+//     padding: 5px 0px;
+// }
 
-// Modal
-.ant-modal-title {
-    font-size: 20px;
-    text-transform: uppercase;
-}
+// // Modal
+// .ant-modal-title {
+//     font-size: 20px;
+//     text-transform: uppercase;
+// }
 
-.resume-transaction {
-    text-align: center !important;
+// .resume-transaction {
+//     text-align: center !important;
 
-    .pincode {
-        margin: 20px 87px;
-    }
+//     .pincode {
+//         margin: 20px 87px;
+//     }
 
-    .fees {
-        background: var(--primary-color);
-        border-radius: 5px;
-        color: white;
-        font-size: 18px;
-        padding: 7px;
-        margin: 0px 150px;
-    }
+//     .fees {
+//         background: var(--primary-color);
+//         border-radius: 5px;
+//         color: white;
+//         font-size: 18px;
+//         padding: 7px;
+//         margin: 0px 150px;
+//     }
 
-    .price {
-        font-size: 20px;
-        margin-top: 10px;
-        margin-bottom: 5px;
-    }
+//     .price {
+//         font-size: 20px;
+//         margin-top: 10px;
+//         margin-bottom: 5px;
+//     }
 
-    p {
-        font-weight: 500;
-        color: #000000ad;
-        margin: 10px;
+//     p {
+//         font-weight: 500;
+//         color: #000000ad;
+//         margin: 10px;
 
-        span {
-            font-weight: initial;
-        }
-    }
+//         span {
+//             font-weight: initial;
+//         }
+//     }
 
-    .react-codes-input__wrapper___mwAv1 {
-        border: none;
-    }
+//     .react-codes-input__wrapper___mwAv1 {
+//         border: none;
+//     }
 
-    .react-codes-input__code-wrapper___3gxOo {
-        font-family: monospace;
-        border-radius: 6px;
-        border: 1px solid lightgrey;
-        // box-shadow: rgb(0 0 0 / 10%) 0px 0px 10px 0px;
-        margin: 4px;
-        padding-left: 8px;
-        width: 36px;
-        height: 42px;
-        font-size: 32px;
-        box-sizing: border-box;
-        color: black;
-        background-color: white;
-    }
+//     .react-codes-input__code-wrapper___3gxOo {
+//         font-family: monospace;
+//         border-radius: 6px;
+//         border: 1px solid lightgrey;
+//         // box-shadow: rgb(0 0 0 / 10%) 0px 0px 10px 0px;
+//         margin: 4px;
+//         padding-left: 8px;
+//         width: 36px;
+//         height: 42px;
+//         font-size: 32px;
+//         box-sizing: border-box;
+//         color: black;
+//         background-color: white;
+//     }
 
-    .react-codes-input__code-wrapper___3gxOo :after {
-        font-family: monospace;
-        border-radius: 6px;
-        border: 1px solid lightgrey;
-        // box-shadow: rgb(0 0 0 / 10%) 0px 0px 10px 0px;
-        margin: 4px;
-        padding-left: 8px;
-        width: 36px;
-        height: 42px;
-        font-size: 32px;
-        box-sizing: border-box;
-        color: black;
-        background-color: white;
-    }
+//     .react-codes-input__code-wrapper___3gxOo :after {
+//         font-family: monospace;
+//         border-radius: 6px;
+//         border: 1px solid lightgrey;
+//         // box-shadow: rgb(0 0 0 / 10%) 0px 0px 10px 0px;
+//         margin: 4px;
+//         padding-left: 8px;
+//         width: 36px;
+//         height: 42px;
+//         font-size: 32px;
+//         box-sizing: border-box;
+//         color: black;
+//         background-color: white;
+//     }
 
-    .react-codes-input__code___pEiUJ {
-        border: none;
-    }
+//     .react-codes-input__code___pEiUJ {
+//         border: none;
+//     }
 
-    .ant-result-subtitle {
-        font-size: 17px;
-    }
-}
+//     .ant-result-subtitle {
+//         font-size: 17px;
+//     }
+// }
 
-.error-dialog {
-    .ant-result {
-        padding: 23px 7px;
-    }
-}
+// .error-dialog {
+//     .ant-result {
+//         padding: 23px 7px;
+//     }
+// }
 
-.ant-spin {
-    color: var(--primary-color);
-}
+// .ant-spin {
+//     color: var(--primary-color);
+// }
 
-.ant-card-body {
-    .title {
-        margin-bottom: 13px;
-    }
-}
+// .ant-card-body {
+//     .title {
+//         margin-bottom: 13px;
+//     }
+// }
 
 
-hr {
-    background-color: var(--primary-color);
-}
+// hr {
+//     background-color: var(--primary-color);
+// }

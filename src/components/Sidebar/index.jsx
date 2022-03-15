@@ -26,7 +26,7 @@ function Sidebar() {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/home">
+                        <NavLink to="/category">
                             <span className="ti-agenda"></span>
                             <span>Category</span>
                         </NavLink>

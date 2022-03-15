@@ -8,7 +8,7 @@ function Header() {
             </div>
 
             <div className="social-icons">
-                <span className="ti-bell">xx</span>
+                <span className="ti-bell"></span>
                 <span className="ti-comment"></span>
                 <div></div>
             </div>
