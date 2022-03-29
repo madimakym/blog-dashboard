@@ -1,13 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
-:root {
-    --main-color: #027581;
-    --color-dark: #1D2231;
-    --text-grey: #8390A2;
-}
-
 * {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -26,25 +18,32 @@
     left: 0;
     top: 0;
     z-index: 100;
-    background: var(--main-color);
-    color: #fff;
+    background: var(--white-color);
     overflow-y: auto;
     transition: width 500ms;
 
     li {
+        margin: 12px 0px;
+
         a {
-            color: #fff;
-            font-size: .8rem;
+            color: var(--primary-text-color);
             text-transform: uppercase;
             display: block;
             padding: 10px 10px;
+            font-weight: 500;
         }
 
-        .active{
-            background-color: red;
+        .active {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 6px;
         }
     }
 
+    .brand {
+        font-weight: 500;
+        font-size: 17px;
+    }
 }
 
 .sidebar-header {
@@ -100,14 +99,15 @@ header {
     top: 0;
     z-index: 100;
     width: calc(100% - 240px);
-    background: #fff;
+    // background: #fff;
     height: 60px;
     padding: 0rem 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0px 0px 3px #ccc;
+    // box-shadow: 0px 0px 3px #ccc;
     transition: left 500ms;
+
 }
 
 .search-wrapper {
@@ -194,7 +194,7 @@ main {
 }
 
 .card-footer a {
-    color: var(--main-color);
+    color: var(--primary-color);
 }
 
 .recent {
@@ -254,7 +254,7 @@ tbody tr:nth-child(even) {
 
 .badge.success {
     background: #DEF7EC;
-    color: var(--main-color);
+    color: var(--primary-color);
 }
 
 .badge.warning {
@@ -310,7 +310,7 @@ tbody tr:nth-child(even) {
 }
 
 .summary-single h5 {
-    color: var(--main-color);
+    color: var(--primary-color);
     font-size: 1.1rem;
     margin-bottom: 0rem !important;
 }
@@ -346,9 +346,9 @@ tbody tr:nth-child(even) {
 }
 
 .text-center button {
-    background: var(--main-color);
+    background: var(--primary-color);
     color: #fff;
-    border: 1px solid var(--main-color);
+    border: 1px solid var(--primary-color);
     border-radius: 4px;
     padding: .4rem 1rem;
 }

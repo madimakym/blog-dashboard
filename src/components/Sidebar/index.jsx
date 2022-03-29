@@ -7,7 +7,7 @@ function Sidebar() {
         <div className="sidebar">
             <div className="sidebar-header">
                 <h3 className="brand">
-                    <span>My Blog</span>
+                    <span>BLOG - DASHBOARD</span>
                 </h3>
                 <label for="sidebar-toggle" className="ti-menu-alt"></label>
             </div>
