@@ -14,8 +14,6 @@ function PostCreate() {
     const category = useSelector((state) => state.category);
     const navigate = useNavigate();
 
-
-
     const onFinish = (values) => {
         dispatch(postCreateAsync(values))
     };
@@ -86,7 +84,7 @@ function PostCreate() {
                             <TextArea rows={4} />
                         </Form.Item>
 
-                        <Form.Item label="Category" name="description">
+                        <Form.Item label="Category" name="category">
                             <div className="form-group">
                                 <Form.Item name="categoryId" rules={[{ required: true, message: "This field is required" }]}>
                                     <Select>
@@ -98,7 +96,7 @@ function PostCreate() {
                             </div>
                         </Form.Item>
 
-                        <Form.Item >
+                        <Form.Item>
                             <Button type="primary" htmlType="submit"> Save</Button>
                         </Form.Item>
                     </Form>

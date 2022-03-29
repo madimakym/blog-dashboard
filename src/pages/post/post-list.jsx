@@ -9,7 +9,6 @@ function PostList() {
     const dispatch = useDispatch();
     const { posts, isFetching } = useSelector((state) => state.post);
 
-
     useEffect(() => {
         dispatch(postFetchAsync())
     }, [dispatch]);
@@ -34,8 +33,8 @@ function PostList() {
         },
         {
             title: 'Category',
-            dataIndex: 'categoryId',
             key: 'categoryId',
+            render: (record) => <span>{record.categoryId.libelle}</span>,
         },
         {
             title: 'Action',

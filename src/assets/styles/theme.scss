@@ -30,6 +30,21 @@
     color: #fff;
     overflow-y: auto;
     transition: width 500ms;
+
+    li {
+        a {
+            color: #fff;
+            font-size: .8rem;
+            text-transform: uppercase;
+            display: block;
+            padding: 10px 10px;
+        }
+
+        .active{
+            background-color: red;
+        }
+    }
+
 }
 
 .sidebar-header {
@@ -44,14 +59,6 @@
     padding: 1rem;
 }
 
-.sidebar li {
-    margin-bottom: 1.5rem;
-}
-
-.sidebar a {
-    color: #fff;
-    font-size: .8rem;
-}
 
 .sidebar a span:last-child {
     padding-left: .6rem;

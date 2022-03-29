@@ -1,14 +1,17 @@
 import React, { useEffect } from "react";
-import { Breadcrumb, PageHeader, Form, Spin, Input, Button } from 'antd';
+import { Breadcrumb, PageHeader, Form, Spin, Input, Button, Select } from 'antd';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { postClearState, postFetchOneAsync, postEditAsync } from "../../redux/post/post-slice";
+import { categoryFetchAsync } from "../../redux/category/category-slice";
 
 const { TextArea } = Input;
+const { Option } = Select;
 
 function PostEdit() {
     const dispatch = useDispatch();
     const { post, isSuccess, isFetching } = useSelector((state) => state.post);
+    const category = useSelector((state) => state.category);
     const [form] = Form.useForm();
     const navigate = useNavigate();
     let { id } = useParams();
@@ -16,11 +19,16 @@ function PostEdit() {
     form.setFieldsValue({
         libelle: post.libelle,
         description: post.description,
+        categoryId: post.categoryId?._id
     });
 
     useEffect(() => {
         dispatch(postFetchOneAsync(id))
     }, [dispatch, id]);
+
+    useEffect(() => {
+        dispatch(categoryFetchAsync())
+    }, [dispatch]);
 
     const onFinish = (values) => {
         dispatch(postEditAsync({ id: id, data: values }))
@@ -31,11 +39,6 @@ function PostEdit() {
             navigate('/post');
         }
     }, [dispatch, navigate, isSuccess]);
-
-
-    const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-    };
 
     useEffect(() => {
         return () => dispatch(postClearState())
@@ -66,11 +69,8 @@ function PostEdit() {
                         form={form}
                         labelCol={{ span: 8, offset: 8 }}
                         wrapperCol={{ span: 8, offset: 8 }}
-                        initialValues={{
-                            remember: true
-                        }}
+                        initialValues={{ remember: true }}
                         onFinish={onFinish}
-                        onFinishFailed={onFinishFailed}
                         autoComplete="off"
                     >
                         <Form.Item
@@ -88,6 +88,14 @@ function PostEdit() {
 
                         <Form.Item label="Description" name="description">
                             <TextArea rows={4} />
+                        </Form.Item>
+
+                        <Form.Item name="categoryId" rules={[{ required: true, message: "This field is required" }]}>
+                            <Select>
+                                {category.categories.map((item, _i) => {
+                                    return <Option value={item.id}>{item.libelle}</Option>
+                                })}
+                            </Select>
                         </Form.Item>
 
                         <Form.Item >

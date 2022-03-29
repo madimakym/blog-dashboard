@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { AiOutlineHome } from 'react-icons/ai';
 
 
 function Sidebar() {
@@ -15,7 +16,7 @@ function Sidebar() {
                 <ul>
                     <li>
                         <NavLink to="/home">
-                            <span className="ti-home"></span>
+                            <AiOutlineHome />
                             <span>Home</span>
                         </NavLink>
                     </li>
@@ -33,26 +34,26 @@ function Sidebar() {
                     </li>
 
                     <li>
-                        <NavLink to="/home">
+                        <NavLink to="/comments">
                             <span className="ti-agenda"></span>
                             <span>Comments</span>
                         </NavLink>
                     </li>
 
                     <li>
-                        <NavLink to="/home">
+                        <NavLink to="/messages">
                             <span className="ti-clipboard"></span>
                             <span>Messages</span>
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/home">
+                        <NavLink to="/settings">
                             <span className="ti-folder"></span>
                             <span>Settings</span>
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/home">
+                        <NavLink to="/logout">
                             <span className="ti-time"></span>
                             <span>Log out</span>
                         </NavLink>
